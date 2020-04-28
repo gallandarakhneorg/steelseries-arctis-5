@@ -1,0 +1,23 @@
+#!/bin/sh -e
+
+#################################################################
+# Here starts the real action
+#################################################################
+
+case "$1" in
+  remove|disappear)
+    echo "Restarting Pulseaudio."
+    pulseaudio -k
+    pulseaudio --start
+    ;;
+  purge)
+    echo "Restarting Pulseaudio."
+    pulseaudio -k
+    pulseaudio --start
+    ;;
+  abort-install|abort-upgrade)
+    ;;
+esac
+
+#DEBHELPER#
+

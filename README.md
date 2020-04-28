@@ -14,7 +14,7 @@ By default, pulseaudio only enables the voice chat output (testing on Ubuntu Bio
 
 #### Ubuntu / Linux Mint
 
-See instructions on http://www.arakhne.org/unbuntu.html and install the package `pulseaudio-stellseries-arctis-5`.
+See instructions on http://www.arakhne.org/unbuntu.html and install the package `pulseaudio-stellseries-arctis-5-game-channel`.
 
 #### From Source
 

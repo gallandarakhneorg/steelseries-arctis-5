@@ -6,8 +6,10 @@ Maintainer: Stephane Galland <galland@arakhne.org>
 Standards-Version: 3.9.8
 Homepage: http://www.arakhne.org/arctis5
 
-Package: pulseaudio-steelseries-arctis-5
+Package: pulseaudio-steelseries-arctis-5-game-channel
 Architecture: all
+Replace: pulseaudio-steelseries-arctis-5
+Conflicts: pulseaudio-steelseries-arctis-5
 Depends: ${shlibs:Depends}, ${misc:Depends}, pulseaudio, udev
 Description: Pulseaudio configuration for second channel of the SteelSeries Arctis 5
  This package provides the necessary configuration for enabling
