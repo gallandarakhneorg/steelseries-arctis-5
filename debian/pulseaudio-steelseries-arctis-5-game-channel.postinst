@@ -2,9 +2,7 @@
 
 case "$1" in
   configure|abort-*)
-    echo "Restarting Pulseaudio."
-    pulseaudio -k
-    pulseaudio --start
+    /usr/share/update-notifier/notify-reboot-required
     ;;
   *)
     echo "postinst called with unknown argument: '$1''" >&2

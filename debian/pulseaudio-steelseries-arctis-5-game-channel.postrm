@@ -6,14 +6,10 @@
 
 case "$1" in
   remove|disappear)
-    echo "Restarting Pulseaudio."
-    pulseaudio -k
-    pulseaudio --start
+    /usr/share/update-notifier/notify-reboot-required
     ;;
   purge)
-    echo "Restarting Pulseaudio."
-    pulseaudio -k
-    pulseaudio --start
+    /usr/share/update-notifier/notify-reboot-required
     ;;
   abort-install|abort-upgrade)
     ;;

@@ -1,3 +1,9 @@
+steelseries-arctis-5 (1.0-0arakhne1) bionic; urgency=low
+
+  * Reboot the system after package installation.
+
+ -- Stephane GALLAND <galland@arakhne.org>  Tue, 28 Apr 2020 18:56:28 +0200
+
 steelseries-arctis-5 (1.0-0arakhne0) bionic; urgency=low
 
   * New upstream.
