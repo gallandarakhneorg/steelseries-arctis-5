@@ -1,0 +1,12 @@
+steelseries-arctis-5 (1.0-0arakhne0) bionic; urgency=low
+
+  * New upstream.
+
+ -- Stephane GALLAND <galland@arakhne.org>  Tue, 28 Apr 2020 17:16:02 +0200
+
+steelseries-arctis-5 (0.3) all; urgency=low
+
+  * Release for all version of Lunix.
+
+ -- Stephane GALLAND <galland@arakhne.org>  Wed, 6 Mar 2019, 00:00:00 +0100
+

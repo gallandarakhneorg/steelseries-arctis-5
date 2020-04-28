@@ -1,0 +1,17 @@
+Source: steelseries-arctis-5
+Section: sound
+Priority: optional
+Build-Depends: debhelper (>= 4.0), debconf
+Maintainer: Stephane Galland <galland@arakhne.org>
+Standards-Version: 3.9.8
+Homepage: http://www.arakhne.org/arctis5
+
+Package: pulseaudio-steelseries-arctis-5
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, pulseaudio, udev
+Description: Pulseaudio configuration for second channel of the SteelSeries Arctis 5
+ This package provides the necessary configuration for enabling
+ the second channel of the SteelSeries Arctis 5.
+ .
+ This package is based on https://github.com/DemonTPx/steelseries-arctis-5-pulseaudio-profile
+

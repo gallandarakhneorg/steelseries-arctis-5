@@ -1,0 +1,78 @@
+#!/usr/bin/make -f
+#
+# debian/rules file to build sarl-compiler package.
+#
+# Created 28 Apr 2018, by Stephane Galland <galland@arakhne.org>
+
+#export DH_VERBOSE=1
+
+include /usr/share/cdbs/1/rules/buildvars.mk
+
+top_dir      := $(shell pwd)
+
+upstream_dir := $(top_dir)/upstream
+install_dir  := $(top_dir)/debian/tmp
+
+pulseaudio_install_target := lib/udev/rules.d
+
+showvars:
+	@echo "top_dir=$(top_dir)"
+	@echo "upstream_dir=$(upstream_dir)"
+	@echo "install_dir=$(install_dir)"
+
+build: build-stamp
+
+configure-stamp: unpack-stamp
+	dh_testdir
+	touch $@
+
+build-stamp: configure-stamp
+	dh_testdir
+	touch $@
+
+unpack-stamp:
+	dh_testdir
+
+	# Force updating of DebConf internationalization
+	#debconf-updatepo
+
+	touch $@
+
+binary-indep:
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installdirs
+	dh_install --sourcedir=debian/tmp --autodest --fail-missing
+	dh_installdocs
+	dh_installchangelogs
+	dh_installdebconf
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb -- -Zgzip
+
+binary: binary-indep binary-arch
+
+install: install-stamp
+
+install-stamp: build-stamp
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	# Copy the pulseaudio profile
+	install -d -m 0755 "$(install_dir)/$(pulseaudio_install_target)"
+	cd $(upstream_dir)/pulseaudio/ && install -m 0755 *.rules "$(install_dir)/$(pulseaudio_install_target)/"
+	touch $@
+clean:
+	dh_testdir
+	dh_testroot
+	rm -rf *-stamp
+	dh_clean
+
+
+.PHONY: binary-indep binary-arch binary clean build install
+
